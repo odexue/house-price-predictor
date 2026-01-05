@@ -96,7 +96,7 @@ jobs:
       run: |
         mkdir -p models
         python src/models/train_model.py \
-        --config configs/model_config.yaml \
+        --config configs/model_configZZZ.yaml \
         --data data/processed/featured_house_data.csv \
         --models-dir models \
         --mlflow-tracking-uri http://localhost:5555
@@ -113,6 +113,7 @@ jobs:
     #     docker rm mlflow-server || true
     
     - name: Clean up MLflow using Docker Compose
+      if: ${{ always() }}
       run: |
         docker compose -f deployment/mlflow/docker-compose.yaml down -v || true
         
