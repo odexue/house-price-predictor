@@ -1,11 +1,19 @@
 # .github/workflows/mlops-pipeline.yml
 name: MLOps Pipeline
 
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
+
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
+    inputs:
+      run_all:
+        description: 'Run all jobs'
+        required: true
+        default: 'true'
     
 jobs:
   data-processing:
