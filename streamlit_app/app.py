@@ -80,7 +80,7 @@ with col2:
 
             try:
                 # Get API endpoint from environment variable or use default
-                api_endpoint = os.getenv("API_URL", "http://model:8000")
+                api_endpoint = os.getenv("API_URL", "http://api:8000")
                 predict_url = f"{api_endpoint.rstrip('/')}/predict"
 
                 st.write(f"Connecting to API at: {predict_url}")
@@ -128,7 +128,8 @@ with col2:
         with col_b:
             st.markdown('<div class="info-card">', unsafe_allow_html=True)
             st.markdown('<p class="info-label">Model Used</p>', unsafe_allow_html=True)
-            st.markdown('<p class="info-value">XGBoost</p>', unsafe_allow_html=True)
+            model_used = pred["model_used"]
+            st.markdown(f'<p class="info-value">{model_used}</p>', unsafe_allow_html=True)
             st.markdown('</div>', unsafe_allow_html=True)
 
         # Display price range and prediction time

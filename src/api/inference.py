@@ -42,7 +42,8 @@ def predict_price(request: HousePredictionRequest) -> PredictionResponse:
         predicted_price=predicted_price,
         confidence_interval=confidence_interval,
         features_importance={},
-        prediction_time=datetime.now().isoformat()
+        prediction_time=datetime.now().isoformat(),
+        model_used=model.__class__.__name__
     )
 
 def batch_predict(requests: list[HousePredictionRequest]) -> list[float]:

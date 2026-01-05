@@ -14,3 +14,4 @@ class PredictionResponse(BaseModel):
     confidence_interval: List[float]
     features_importance: dict
     prediction_time: str
+    model_used: str
