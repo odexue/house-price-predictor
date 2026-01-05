@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # -----------------------------
-# Argument parser
+# Argument parser config
 # -----------------------------
 def parse_args():
     parser = argparse.ArgumentParser(description="Train and register final model from config.")
