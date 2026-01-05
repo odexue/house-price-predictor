@@ -4,8 +4,12 @@ name: MLOps Pipeline
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'streamlit_app/**'
   pull_request:
     branches: [main]
+    paths-ignore:
+      - 'streamlit_app/**'
     
 jobs:
   data-processing:

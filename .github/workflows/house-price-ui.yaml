@@ -27,6 +27,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./streamlit_app
-          file: Dockerfile
+          file: ./streamlit_app/Dockerfile
           push: true
           tags: docker.io/${{ vars.DOCKERHUB_USERNAME }}/house-price-model-ui:latest
