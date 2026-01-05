@@ -85,7 +85,7 @@ with col2:
 
                 st.write(f"Connecting to API at: {predict_url}")
 
-                # Make API call to FastAPI backend
+                # Make API call to FastAPI backend app
                 response = requests.post(predict_url, json=api_data)
                 response.raise_for_status()  # Raise exception for bad status codes
                 prediction = response.json()
